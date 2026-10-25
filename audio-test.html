@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fire Audio Test</title>
+<link rel="icon" href="data:,">
+<style>
+  :root {
+    --bg: #0e0d0c; --panel: #171513; --line: #2a2622; --fg: #ece6df; --muted: #9a9086; --accent: #ff8a3d; --ok: #7bd88f;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 14px/1.45 system-ui, -apple-system, Segoe UI, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 20px 16px 40px; }
+  h1 { font-size: 18px; margin: 0 0 4px; font-weight: 600; }
+  p.sub { margin: 0 0 16px; color: var(--muted); }
+  .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  button { font: inherit; padding: 8px 14px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--fg); cursor: pointer; }
+  button:hover { border-color: #4a423b; }
+  button.primary { background: var(--accent); border-color: var(--accent); color: #1a0f06; font-weight: 600; min-width: 96px; }
+  .state { color: var(--muted); font-variant-numeric: tabular-nums; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; margin: 18px 0; }
+  @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+  label { display: block; color: var(--muted); font-size: 12px; }
+  label b { color: var(--fg); font-weight: 500; font-variant-numeric: tabular-nums; float: right; }
+  input[type=range] { width: 100%; accent-color: var(--accent); }
+  section { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px; margin-top: 14px; }
+  section h2 { font-size: 13px; margin: 0 0 10px; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: .04em; }
+  .meter { height: 8px; background: #221f1c; border-radius: 4px; overflow: hidden; margin-top: 6px; }
+  .meter > div { height: 100%; width: 0; background: linear-gradient(90deg, var(--ok), var(--accent)); }
+  .stage { position: relative; height: 44px; background: #120f0d; border-radius: 8px; margin-top: 10px; overflow: hidden; }
+  .spark { position: absolute; top: 50%; width: 10px; height: 10px; margin: -5px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 16px 6px rgba(255,138,61,.6); opacity: 1; transition: opacity .5s, transform .5s; }
+  #log { font: 12px/1.5 ui-monospace, Consolas, monospace; color: var(--muted); max-height: 180px; overflow: auto; white-space: pre; }
+  .chk { display: flex; gap: 6px; align-items: center; color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Procedural campfire audio</h1>
+  <p class="sub">Live test for <code>src/audio/engine.js</code>. Served by <code>node tools/server.mjs</code>.</p>
+  <div class="row">
+    <button class="primary" id="start" disabled>Loading</button>
+    <span class="state" id="state">loading worklet</span>
+  </div>
+
+  <div class="grid">
+    <div><label>Intensity <b id="v-intensity">1.00</b></label><input id="intensity" type="range" min="0" max="1.5" step="0.01" value="1"></div>
+    <div><label>Heat release (hrr) <b id="v-hrr">1.00</b></label><input id="hrr" type="range" min="0" max="3" step="0.01" value="1"></div>
+    <div><label>Camera distance (m) <b id="v-camDist">2.2</b></label><input id="camDist" type="range" min="0.3" max="12" step="0.05" value="2.2"></div>
+    <div><label>Camera azimuth (rad) <b id="v-camAz">0.00</b></label><input id="camAz" type="range" min="-3.14" max="3.14" step="0.01" value="0"></div>
+    <div><label>Volume <b id="v-volume">0.80</b></label><input id="volume" type="range" min="0" max="1" step="0.01" value="0.8"></div>
+    <div><label>Random pop rate (/s) <b id="v-popRate">0.12</b></label><input id="popRate" type="range" min="0" max="3" step="0.01" value="0.12"></div>
+  </div>
+  <label class="chk"><input type="checkbox" id="flicker" checked> simulate sim heat-release flicker (hrr x puffing noise, dhrr derived)</label>
+
+  <section>
+    <h2>Events</h2>
+    <div class="grid" style="margin:0 0 10px">
+      <div><label>Strength <b id="v-strength">0.80</b></label><input id="strength" type="range" min="0" max="1" step="0.01" value="0.8"></div>
+      <div><label>Pan (fire-local x) <b id="v-pan">0.00</b></label><input id="pan" type="range" min="-1" max="1" step="0.01" value="0"></div>
+    </div>
+    <div class="row" id="events">
+      <button data-ev="ignite">Ignite</button><button data-ev="pop">Pop</button><button data-ev="crackle-burst">Crackle burst</button>
+      <button data-ev="log-shift">Log shift</button><button data-ev="whoosh">Whoosh</button><button data-ev="gust">Gust</button>
+    </div>
+    <div class="stage" id="stage"></div>
+  </section>
+
+  <section>
+    <h2>Output</h2>
+    <div class="state" id="meterText">peak -inf dBFS, rms -inf dBFS, limiter 0.0 dB</div>
+    <div class="meter"><div id="meterBar"></div></div>
+    <div id="log" style="margin-top:10px"></div>
+  </section>
+</main>
+<script type="module">
+import { FireAudio } from './src/audio/engine.js';
+
+const $ = (id) => document.getElementById(id);
+const T = (window.__audioTest = { ready: false, errors: [], events: [], fa: null, analyser: null });
+window.addEventListener('error', (e) => T.errors.push(String(e.message || e)));
+window.addEventListener('unhandledrejection', (e) => T.errors.push(String(e.reason)));
+
+const fa = await FireAudio.create({ seed: 1337, volume: 0.8 });
+T.fa = fa;
+const analyser = new AnalyserNode(fa.ctx, { fftSize: 2048 });
+fa.output.connect(analyser);
+T.analyser = analyser;
+const buf = new Float32Array(analyser.fftSize);
+T.meter = () => { analyser.getFloatTimeDomainData(buf); let s = 0, p = 0; for (const v of buf) { s += v * v; p = Math.max(p, Math.abs(v)); } return { rmsDb: 10 * Math.log10(s / buf.length + 1e-24), peakDb: 20 * Math.log10(p + 1e-12), state: fa.state, master: fa.meter }; };
+T.ready = true;
+
+const startBtn = $('start');
+startBtn.disabled = false; startBtn.textContent = 'Start';
+const showState = () => { $('state').textContent = `${fa.state}${fa.needsGesture ? ' (click anywhere to enable audio)' : ''} · ${fa.ctx.sampleRate} Hz · latency ${(fa.latency * 1000).toFixed(0)} ms`; };
+fa.ctx.onstatechange = showState; showState();
+startBtn.onclick = async () => {
+  if (fa.started) { await fa.stop(); startBtn.textContent = 'Start'; }
+  else { await fa.start(); startBtn.textContent = 'Stop'; }
+  showState();
+};
+
+const val = (id) => +$(id).value;
+for (const id of ['intensity', 'hrr', 'camDist', 'camAz', 'volume', 'popRate', 'strength', 'pan']) {
+  const show = () => ($('v-' + id).textContent = id === 'camDist' ? val(id).toFixed(2) : val(id).toFixed(2));
+  $(id).addEventListener('input', show); show();
+}
+$('volume').addEventListener('input', () => fa.setVolume(val('volume')));
+$('popRate').addEventListener('input', () => fa.setParam('popRate', val('popRate')));
+
+// per-frame update, like the real app: hrr optionally modulated by a puffing-like flicker
+let nb = 0, nb2 = 0;
+function frame(ts) {
+  const t = ts / 1000;
+  let hrr = val('hrr');
+  if ($('flicker').checked) { nb += 0.25 * ((Math.random() * 2 - 1) * 1.7 - nb); nb2 += 0.08 * (nb - nb2); hrr *= 1 + 0.06 * Math.sin(2 * Math.PI * 1.75 * t) + 0.25 * nb2; }
+  fa.update({ intensity: val('intensity'), hrr, camDist: val('camDist'), camAz: val('camAz') });
+  const m = fa.meter;
+  $('meterText').textContent = `peak ${m.peakDb.toFixed(1)} dBFS, rms ${m.rmsDb.toFixed(1)} dBFS, limiter ${m.grDb.toFixed(1)} dB`;
+  $('meterBar').style.width = Math.max(0, Math.min(100, (m.rmsDb + 60) / 60 * 100)) + '%';
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+
+function spark(ev) {
+  const el = document.createElement('div'); el.className = 'spark';
+  el.style.left = (50 + 45 * (ev.stereoPan ?? 0)) + '%';
+  const s = 0.6 + (ev.size ?? 0.5); el.style.transform = `scale(${s})`;
+  $('stage').appendChild(el);
+  requestAnimationFrame(() => { el.style.opacity = 0; el.style.transform = `scale(${s * 1.8})`; });
+  setTimeout(() => el.remove(), 600);
+}
+function log(ev) {
+  T.events.push(ev);
+  $('log').textContent = `${ev.contextTime.toFixed(3)}s  ${ev.source.padEnd(8)} ${ev.type.padEnd(13)} strength ${(+ev.strength).toFixed(2)}  pan ${(+ev.pan).toFixed(2)}\n` + $('log').textContent;
+}
+fa.onEvent((ev) => { log(ev); spark(ev); }, { all: true });
+
+document.querySelectorAll('[data-ev]').forEach((b) => (b.onclick = () => {
+  if (!fa.started) fa.start().then(() => { startBtn.textContent = 'Stop'; showState(); });
+  fa.trigger({ type: b.dataset.ev, strength: val('strength'), pan: val('pan') });
+}));
+</script>
+</body>
+</html>

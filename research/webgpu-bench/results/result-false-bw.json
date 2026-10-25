@@ -1,0 +1,198 @@
+{
+ "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+ "errors": [],
+ "results": {
+  "bw": {
+   "copyBufferToBuffer": {
+    "ms": 8.218,
+    "GBps": 16.3
+   },
+   "bufCopyKernel_vec4_wg64": {
+    "ms": 8.2612,
+    "GBps": 16.2
+   },
+   "bufCopyKernel_vec4_wg256": {
+    "ms": 8.0138,
+    "GBps": 16.7
+   },
+   "tex3d_r32float_256_wg4x4x4": {
+    "ms": 6.0194,
+    "GBps": 22.3
+   },
+   "tex3d_r32float_256_wg8x8x4": {
+    "ms": 7.3561,
+    "GBps": 18.2
+   },
+   "tex3d_r32float_256_wg64x1x1": {
+    "ms": 9.7172,
+    "GBps": 13.8
+   },
+   "tex3d_r32float_256_wg8x8x1": {
+    "ms": 8.5098,
+    "GBps": 15.8
+   },
+   "tex3d_rgba16float_256_wg4x4x4": {
+    "ms": 20.5034,
+    "GBps": 13.1
+   },
+   "tex3d_rgba16float_256_wg8x8x4": {
+    "ms": 15.0527,
+    "GBps": 17.8
+   },
+   "tex3d_rgba16float_256_wg64x1x1": {
+    "ms": 25.7103,
+    "GBps": 10.4
+   },
+   "tex3d_rgba16float_256_wg8x8x1": {
+    "ms": 36.5026,
+    "GBps": 7.4
+   },
+   "tex3d_rgba16float_128_wg4x4x4": {
+    "ms": 2.3978,
+    "GBps": 14
+   },
+   "tex3d_rgba16float_128_wg8x8x4": {
+    "ms": 2.4917,
+    "GBps": 13.5
+   },
+   "tex3d_rgba16float_128_wg64x1x1": {
+    "ms": 2.5947,
+    "GBps": 12.9
+   },
+   "tex3d_rgba16float_128_wg8x8x1": {
+    "ms": 2.6076,
+    "GBps": 12.9
+   },
+   "tex2d_r32float_4096": {
+    "ms": 7.5966,
+    "GBps": 17.7
+   },
+   "aluFma": {
+    "ms": 11.3894,
+    "TFLOPS": 3.02
+   }
+  }
+ },
+ "wgslLanguageFeatures": [
+  "buffer_view",
+  "immediate_address_space",
+  "linear_indexing",
+  "packed_4x8_integer_dot_product",
+  "pointer_composite_access",
+  "readonly_and_readwrite_storage_textures",
+  "subgroup_id",
+  "subgroup_uniformity",
+  "swizzle_assignment",
+  "texture_and_sampler_let",
+  "texture_formats_tier1",
+  "uniform_buffer_standard_layout",
+  "unrestricted_pointer_parameters"
+ ],
+ "preferredCanvasFormat": "bgra8unorm",
+ "adapterInfo": {
+  "vendor": "amd",
+  "architecture": "rdna-3",
+  "device": "0x1900",
+  "description": "AMD Radeon 780M Graphics",
+  "isFallbackAdapter": false,
+  "subgroupMinSize": 32,
+  "subgroupMaxSize": 64
+ },
+ "features": [
+  "atomic-vec2u-min-max",
+  "bgra8unorm-storage",
+  "chromium-experimental-multi-draw-indirect",
+  "chromium-experimental-sampling-resource-table",
+  "chromium-experimental-timestamp-query-inside-passes",
+  "clip-distances",
+  "core-features-and-limits",
+  "depth-clip-control",
+  "depth32float-stencil8",
+  "dual-source-blending",
+  "float32-blendable",
+  "float32-filterable",
+  "indirect-first-instance",
+  "primitive-index",
+  "rg11b10ufloat-renderable",
+  "shader-f16",
+  "subgroup-size-control",
+  "subgroups",
+  "texture-component-swizzle",
+  "texture-compression-bc",
+  "texture-compression-bc-sliced-3d",
+  "texture-compression-unaligned",
+  "texture-formats-tier1",
+  "texture-formats-tier2",
+  "timestamp-query"
+ ],
+ "limits": {
+  "maxTextureDimension1D": 16384,
+  "maxTextureDimension2D": 16384,
+  "maxTextureDimension3D": 2048,
+  "maxTextureArrayLayers": 2048,
+  "maxBindGroups": 4,
+  "maxBindGroupsPlusVertexBuffers": 24,
+  "maxBindingsPerBindGroup": 1000,
+  "maxDynamicUniformBuffersPerPipelineLayout": 10,
+  "maxDynamicStorageBuffersPerPipelineLayout": 8,
+  "maxSampledTexturesPerShaderStage": 48,
+  "maxSamplersPerShaderStage": 16,
+  "maxStorageBuffersPerShaderStage": 16,
+  "maxStorageTexturesPerShaderStage": 8,
+  "maxUniformBuffersPerShaderStage": 12,
+  "maxUniformBufferBindingSize": 65536,
+  "maxStorageBufferBindingSize": 2147483644,
+  "minUniformBufferOffsetAlignment": 256,
+  "minStorageBufferOffsetAlignment": 256,
+  "maxVertexBuffers": 8,
+  "maxBufferSize": 2147483648,
+  "maxVertexAttributes": 30,
+  "maxVertexBufferArrayStride": 2048,
+  "maxInterStageShaderVariables": 28,
+  "maxColorAttachments": 8,
+  "maxColorAttachmentBytesPerSample": 128,
+  "maxComputeWorkgroupStorageSize": 32768,
+  "maxComputeInvocationsPerWorkgroup": 1024,
+  "maxComputeWorkgroupSizeX": 1024,
+  "maxComputeWorkgroupSizeY": 1024,
+  "maxComputeWorkgroupSizeZ": 64,
+  "maxComputeWorkgroupsPerDimension": 65535,
+  "maxImmediateSize": 64,
+  "maxStorageBuffersInFragmentStage": 16,
+  "maxStorageTexturesInFragmentStage": 8,
+  "maxStorageBuffersInVertexStage": 16,
+  "maxStorageTexturesInVertexStage": 8
+ },
+ "deviceFeatures": [
+  "core-features-and-limits",
+  "float32-blendable",
+  "float32-filterable",
+  "rg11b10ufloat-renderable",
+  "shader-f16",
+  "subgroups",
+  "texture-formats-tier1",
+  "texture-formats-tier2",
+  "timestamp-query"
+ ],
+ "probes": {
+  "r32float_rw": "ok",
+  "rgba16float_rw": "ok",
+  "rgba16float_readonly": "ok",
+  "r16float_write": "ok",
+  "rg11b10_write": "ok"
+ },
+ "done": true,
+ "headless": "false",
+ "flags": [
+  "--enable-unsafe-webgpu",
+  "--enable-webgpu-developer-features",
+  "--ignore-gpu-blocklist",
+  "--disable-background-timer-throttling",
+  "--disable-renderer-backgrounding",
+  "--disable-backgrounding-occluded-windows",
+  "--no-first-run",
+  "--no-default-browser-check"
+ ],
+ "seconds": 13.349,
+ "exposedBytes": 0
+}

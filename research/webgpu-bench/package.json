@@ -1,0 +1,15 @@
+{
+  "name": "fire-webgpu-bench",
+  "private": true,
+  "type": "module",
+  "description": "WebGPU fluid-kernel / readback / transfer micro-benchmarks driven by system Chrome via puppeteer-core",
+  "scripts": {
+    "probe": "node run.mjs new probe",
+    "grid": "node run.mjs new grid",
+    "bw": "node run.mjs new bw",
+    "tb": "node run.mjs new tb",
+    "xfer": "node run.mjs new xfer",
+    "poisson": "node poisson.mjs 64 face"
+  },
+  "dependencies": { "puppeteer-core": "^24.43.1" }
+}

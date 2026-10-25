@@ -1,0 +1,7 @@
+node_modules/
+.venv/
+out/
+__pycache__/
+tools/audio_analysis/png/
+*.wav
+*.mp4

@@ -1,0 +1,77 @@
+{
+ "comment": "Real fire recordings used as the texture reference. WAVs are 48 kHz conversions (ffmpeg soxr) of the original downloads, kept outside the repo in the scratchpad audio_refs/ folder. Rebuild with: python -I texture_stats.py --build-reference references.json",
+ "stats_dir": "stats",
+ "png_dir": "png",
+ "references": [
+  {
+   "name": "ref_dartington_crackling_fire",
+   "wav": "C:/Users/User/AppData/Local/Temp/claude/D--fire/bc550da3-92c2-4cba-b445-153d7412a165/scratchpad/audio_refs/wav48/ia_aporee_dartington_crackling_fire.wav",
+   "start": 2, "dur": 56,
+   "title": "Dartington, Devon, UK - soundcamp2015dartington crackling fire (radio aporee)",
+   "url": "https://archive.org/details/aporee_27776_32009",
+   "license": "Public Domain Mark 1.0",
+   "author": "TonyW",
+   "notes": "Stereo, Vorbis 96 kbps source (16.5 kHz bandwidth). Clean, dense crackling wood fire, close mic. First 2 s (fade-in) excluded."
+  },
+  {
+   "name": "ref_commons_campfire_ambience",
+   "wav": "C:/Users/User/AppData/Local/Temp/claude/D--fire/bc550da3-92c2-4cba-b445-153d7412a165/scratchpad/audio_refs/wav48/commons_campfire_ambience.wav",
+   "start": 0, "dur": 56,
+   "title": "Campfire sound ambience.ogg (Wikimedia Commons, from Freesound)",
+   "url": "https://commons.wikimedia.org/wiki/File:Campfire_sound_ambience.ogg",
+   "license": "CC BY 3.0",
+   "author": "Glaneur de sons",
+   "notes": "Mono, Vorbis 86 kbps (18 kHz bandwidth). Small campfire, sparse loud crackles. Last 4 s (fade-out) excluded."
+  },
+  {
+   "name": "ref_wws_bonfire_burning",
+   "wav": "C:/Users/User/AppData/Local/Temp/claude/D--fire/bc550da3-92c2-4cba-b445-153d7412a165/scratchpad/audio_refs/wav48/commons_wws_bonfire_burning.wav",
+   "start": 1, "dur": 40,
+   "title": "WWS Bonfireburning.ogg (Work With Sounds project, Werstas)",
+   "url": "https://commons.wikimedia.org/wiki/File:WWS_Bonfireburning.ogg",
+   "license": "CC BY 4.0",
+   "author": "Work With Sounds / Werstas",
+   "notes": "Stereo, Vorbis (15 kHz bandwidth). Large Finnish midsummer bonfire, strong roar, faint distant voices/birds in 1-4 kHz. 41-52 s (whistle at 8 kHz) excluded."
+  },
+  {
+   "name": "ref_heckfricker_campfire01",
+   "wav": "C:/Users/User/AppData/Local/Temp/claude/D--fire/bc550da3-92c2-4cba-b445-153d7412a165/scratchpad/audio_refs/wav48/ia_heckfricker_campfire01.wav",
+   "start": 0, "dur": null,
+   "title": "Campfire 01 (Freesound #729395, lossless mirror on archive.org)",
+   "url": "https://freesound.org/people/HECKFRICKER/sounds/729395/ (mirror: https://archive.org/details/soundica-fs-729395-campfire-01)",
+   "license": "CC0 1.0",
+   "author": "HECKFRICKER",
+   "notes": "Stereo 44.1 kHz/16-bit FLAC, full bandwidth. Quiet recording (-47 dBFS RMS) with audible recorder noise floor; sparse crackles."
+  },
+  {
+   "name": "ref_heckfricker_campfire02",
+   "wav": "C:/Users/User/AppData/Local/Temp/claude/D--fire/bc550da3-92c2-4cba-b445-153d7412a165/scratchpad/audio_refs/wav48/ia_heckfricker_campfire02.wav",
+   "start": 0, "dur": null,
+   "title": "Campfire 02 (Freesound #729396, lossless mirror on archive.org)",
+   "url": "https://freesound.org/people/HECKFRICKER/sounds/729396/ (mirror: https://archive.org/details/soundica-fs-729396-campfire-02)",
+   "license": "CC0 1.0",
+   "author": "HECKFRICKER",
+   "notes": "Stereo 44.1 kHz/16-bit FLAC, 268 s. Same recordist (probably same fire) as campfire01."
+  },
+  {
+   "name": "ref_kirchmoeser_campfire",
+   "wav": "C:/Users/User/AppData/Local/Temp/claude/D--fire/bc550da3-92c2-4cba-b445-153d7412a165/scratchpad/audio_refs/wav48/ia_aporee_kirchmoeser_campfire.wav",
+   "start": 2, "dur": 113,
+   "title": "Kirchmoeser Ost - campfire (radio aporee)",
+   "url": "https://archive.org/details/aporee_57880_67760",
+   "license": "CC BY-SA 3.0",
+   "author": "Udo Noll",
+   "notes": "Stereo MP3 238 kbps (Sony PCM-D50 + Primo EM172). Small campfire on a cold autumn day, soft flame rumble, moderate crackles. MP3 dropout at ~119 s excluded."
+  },
+  {
+   "name": "excluded_dry_grass_fireplace",
+   "exclude": true,
+   "wav": "C:/Users/User/AppData/Local/Temp/claude/D--fire/bc550da3-92c2-4cba-b445-153d7412a165/scratchpad/audio_refs/wav48/commons_dry_grass_fireplace.wav",
+   "title": "Dry grass burning in open fireplace.ogg",
+   "url": "https://commons.wikimedia.org/wiki/File:Dry_grass_burning_in_open_fireplace.ogg",
+   "license": "Public domain (PDSounds)",
+   "author": "ezwa",
+   "notes": "Excluded: burning grass (dense white-ish crackle), not a wood fire; mono MP3-derived."
+  }
+ ]
+}

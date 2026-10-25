@@ -1,0 +1,480 @@
+{
+ "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+ "errors": [],
+ "results": {
+  "grid_64": {
+   "advectSL": {
+    "gpu": 0.5063,
+    "wall": 1.09
+   },
+   "advectSL_rgba32f": {
+    "gpu": 0.6966,
+    "wall": 0.92
+   },
+   "maccormack": {
+    "gpu": 1.0362,
+    "wall": 1.34
+   },
+   "divergence": {
+    "gpu": 0.2344,
+    "wall": 0.56
+   },
+   "jacobiTex": {
+    "gpu": 0.1956,
+    "wall": 0.2725
+   },
+   "jacobiBuf": {
+    "gpu": 0.1631,
+    "wall": 0.23
+   },
+   "rbSOR": {
+    "gpu": 0.2268,
+    "wall": 0.31
+   },
+   "project": {
+    "gpu": 0.4393,
+    "wall": 0.71
+   },
+   "vorticity": {
+    "gpu": 0.873,
+    "wall": 1.17
+   },
+   "fullStep40": {
+    "gpu": 11.8458,
+    "wall": 14.7333
+   },
+   "raymarch_960x540_shadow0": {
+    "gpu": 0.8584,
+    "wall": 1.65
+   },
+   "raymarch_960x540_shadow6": {
+    "gpu": 1.5873,
+    "wall": 2.675
+   },
+   "raymarch_1920x1080_shadow0": {
+    "gpu": 3.3212,
+    "wall": 4.15
+   },
+   "raymarch_1920x1080_shadow6": {
+    "gpu": 4.7658,
+    "wall": 5.8
+   }
+  },
+  "grid_96": {
+   "advectSL": {
+    "gpu": 1.2094,
+    "wall": 1.5
+   },
+   "advectSL_rgba32f": {
+    "gpu": 1.9006,
+    "wall": 2.25
+   },
+   "maccormack": {
+    "gpu": 2.8137,
+    "wall": 3.63
+   },
+   "divergence": {
+    "gpu": 0.9148,
+    "wall": 1.17
+   },
+   "jacobiTex": {
+    "gpu": 0.7471,
+    "wall": 0.8325
+   },
+   "jacobiBuf": {
+    "gpu": 0.5911,
+    "wall": 0.6875
+   },
+   "rbSOR": {
+    "gpu": 1.2748,
+    "wall": 1.365
+   },
+   "project": {
+    "gpu": 1.2838,
+    "wall": 1.94
+   },
+   "vorticity": {
+    "gpu": 2.7242,
+    "wall": 3.41
+   },
+   "fullStep40": {
+    "gpu": 44.393,
+    "wall": 46.4333
+   },
+   "raymarch_960x540_shadow0": {
+    "gpu": 0.9686,
+    "wall": 1.75
+   },
+   "raymarch_960x540_shadow6": {
+    "gpu": 1.8473,
+    "wall": 3
+   },
+   "raymarch_1920x1080_shadow0": {
+    "gpu": 4.0285,
+    "wall": 5.35
+   },
+   "raymarch_1920x1080_shadow6": {
+    "gpu": 5.9426,
+    "wall": 8.425
+   }
+  },
+  "grid_128": {
+   "advectSL": {
+    "gpu": 4.4948,
+    "wall": 4.82
+   },
+   "advectSL_rgba32f": {
+    "gpu": 7.7479,
+    "wall": 8.19
+   },
+   "maccormack": {
+    "gpu": 12.05,
+    "wall": 12.68
+   },
+   "divergence": {
+    "gpu": 2.3069,
+    "wall": 2.67
+   },
+   "jacobiTex": {
+    "gpu": 2.0814,
+    "wall": 2.19
+   },
+   "jacobiBuf": {
+    "gpu": 1.8844,
+    "wall": 1.9825
+   },
+   "rbSOR": {
+    "gpu": 4.3193,
+    "wall": 4.5625
+   },
+   "project": {
+    "gpu": 3.4325,
+    "wall": 3.9
+   },
+   "vorticity": {
+    "gpu": 10.1683,
+    "wall": 10.79
+   },
+   "fullStep40": {
+    "gpu": 125.7241,
+    "wall": 130.4667
+   },
+   "raymarch_960x540_shadow0": {
+    "gpu": 2.1,
+    "wall": 3.175
+   },
+   "raymarch_960x540_shadow6": {
+    "gpu": 8.6244,
+    "wall": 10.35
+   },
+   "raymarch_1920x1080_shadow0": {
+    "gpu": 4.4713,
+    "wall": 5.65
+   },
+   "raymarch_1920x1080_shadow6": {
+    "gpu": 10.2593,
+    "wall": 13.225
+   }
+  },
+  "grid_160": {
+   "advectSL": {
+    "gpu": 8.9969,
+    "wall": 10.58
+   },
+   "advectSL_rgba32f": {
+    "gpu": 13.0918,
+    "wall": 13.97
+   },
+   "maccormack": {
+    "gpu": 25.1191,
+    "wall": 27.13
+   },
+   "divergence": {
+    "gpu": 5.167,
+    "wall": 6
+   },
+   "jacobiTex": {
+    "gpu": 4.6659,
+    "wall": 4.9525
+   },
+   "jacobiBuf": {
+    "gpu": 4.3725,
+    "wall": 4.6
+   },
+   "rbSOR": {
+    "gpu": 9.1182,
+    "wall": 9.2725
+   },
+   "project": {
+    "gpu": 7.9138,
+    "wall": 8.26
+   },
+   "vorticity": {
+    "gpu": 21.7024,
+    "wall": 22.55
+   },
+   "fullStep40": {
+    "gpu": 270.3931,
+    "wall": 273.8667
+   },
+   "raymarch_960x540_shadow0": {
+    "gpu": 3.5666,
+    "wall": 4.575
+   },
+   "raymarch_960x540_shadow6": {
+    "gpu": 29.5192,
+    "wall": 31.25
+   },
+   "raymarch_1920x1080_shadow0": {
+    "gpu": 6.0346,
+    "wall": 7
+   },
+   "raymarch_1920x1080_shadow6": {
+    "gpu": 22.5054,
+    "wall": 24.1
+   }
+  },
+  "grid_128x192x128": {
+   "advectSL": {
+    "gpu": 4.7791,
+    "wall": 5.09
+   },
+   "advectSL_rgba32f": {
+    "gpu": 11.7387,
+    "wall": 12.36
+   },
+   "maccormack": {
+    "gpu": 12.0467,
+    "wall": 12.96
+   },
+   "divergence": {
+    "gpu": 3.7642,
+    "wall": 4.08
+   },
+   "jacobiTex": {
+    "gpu": 3.145,
+    "wall": 3.2725
+   },
+   "jacobiBuf": {
+    "gpu": 2.8827,
+    "wall": 2.9725
+   },
+   "rbSOR": {
+    "gpu": 6.546,
+    "wall": 6.6775
+   },
+   "project": {
+    "gpu": 5.6102,
+    "wall": 5.85
+   },
+   "vorticity": {
+    "gpu": 14.4597,
+    "wall": 14.74
+   },
+   "fullStep40": {
+    "gpu": 177.6492,
+    "wall": 179.5
+   },
+   "raymarch_960x540_shadow0": {
+    "gpu": 2.4608,
+    "wall": 2.95
+   },
+   "raymarch_960x540_shadow6": {
+    "gpu": 14.4253,
+    "wall": 14.9
+   },
+   "raymarch_1920x1080_shadow0": {
+    "gpu": 5.733,
+    "wall": 6.5
+   },
+   "raymarch_1920x1080_shadow6": {
+    "gpu": 14.4642,
+    "wall": 15.625
+   }
+  },
+  "wgSweep128": {
+   "4x4x4": {
+    "advect": {
+     "gpu": 4.5124,
+     "wall": 5.22
+    },
+    "jacobi": {
+     "gpu": 2.1344,
+     "wall": 2.1975
+    }
+   },
+   "8x8x1": {
+    "advect": {
+     "gpu": 4.2333,
+     "wall": 4.59
+    },
+    "jacobi": {
+     "gpu": 2.1786,
+     "wall": 2.2925
+    }
+   },
+   "8x4x4": {
+    "advect": {
+     "gpu": 4.5649,
+     "wall": 5.06
+    },
+    "jacobi": {
+     "gpu": 2.1974,
+     "wall": 2.435
+    }
+   },
+   "8x8x4": {
+    "advect": {
+     "gpu": 4.4662,
+     "wall": 4.92
+    },
+    "jacobi": {
+     "gpu": 2.1932,
+     "wall": 2.375
+    }
+   },
+   "16x4x4": {
+    "advect": {
+     "gpu": 4.501,
+     "wall": 5.02
+    },
+    "jacobi": {
+     "gpu": 2.1647,
+     "wall": 2.33
+    }
+   },
+   "32x2x2": {
+    "advect": {
+     "gpu": 3.9791,
+     "wall": 4.27
+    },
+    "jacobi": {
+     "gpu": 2.0779,
+     "wall": 2.2575
+    }
+   }
+  }
+ },
+ "wgslLanguageFeatures": [
+  "buffer_view",
+  "immediate_address_space",
+  "linear_indexing",
+  "packed_4x8_integer_dot_product",
+  "pointer_composite_access",
+  "readonly_and_readwrite_storage_textures",
+  "subgroup_id",
+  "subgroup_uniformity",
+  "swizzle_assignment",
+  "texture_and_sampler_let",
+  "texture_formats_tier1",
+  "uniform_buffer_standard_layout",
+  "unrestricted_pointer_parameters"
+ ],
+ "preferredCanvasFormat": "bgra8unorm",
+ "adapterInfo": {
+  "vendor": "amd",
+  "architecture": "rdna-3",
+  "device": "0x1900",
+  "description": "AMD Radeon 780M Graphics",
+  "isFallbackAdapter": false,
+  "subgroupMinSize": 32,
+  "subgroupMaxSize": 64
+ },
+ "features": [
+  "atomic-vec2u-min-max",
+  "bgra8unorm-storage",
+  "chromium-experimental-multi-draw-indirect",
+  "chromium-experimental-sampling-resource-table",
+  "chromium-experimental-timestamp-query-inside-passes",
+  "clip-distances",
+  "core-features-and-limits",
+  "depth-clip-control",
+  "depth32float-stencil8",
+  "dual-source-blending",
+  "float32-blendable",
+  "float32-filterable",
+  "indirect-first-instance",
+  "primitive-index",
+  "rg11b10ufloat-renderable",
+  "shader-f16",
+  "subgroup-size-control",
+  "subgroups",
+  "texture-component-swizzle",
+  "texture-compression-bc",
+  "texture-compression-bc-sliced-3d",
+  "texture-compression-unaligned",
+  "texture-formats-tier1",
+  "texture-formats-tier2",
+  "timestamp-query"
+ ],
+ "limits": {
+  "maxTextureDimension1D": 16384,
+  "maxTextureDimension2D": 16384,
+  "maxTextureDimension3D": 2048,
+  "maxTextureArrayLayers": 2048,
+  "maxBindGroups": 4,
+  "maxBindGroupsPlusVertexBuffers": 24,
+  "maxBindingsPerBindGroup": 1000,
+  "maxDynamicUniformBuffersPerPipelineLayout": 10,
+  "maxDynamicStorageBuffersPerPipelineLayout": 8,
+  "maxSampledTexturesPerShaderStage": 48,
+  "maxSamplersPerShaderStage": 16,
+  "maxStorageBuffersPerShaderStage": 16,
+  "maxStorageTexturesPerShaderStage": 8,
+  "maxUniformBuffersPerShaderStage": 12,
+  "maxUniformBufferBindingSize": 65536,
+  "maxStorageBufferBindingSize": 2147483644,
+  "minUniformBufferOffsetAlignment": 256,
+  "minStorageBufferOffsetAlignment": 256,
+  "maxVertexBuffers": 8,
+  "maxBufferSize": 2147483648,
+  "maxVertexAttributes": 30,
+  "maxVertexBufferArrayStride": 2048,
+  "maxInterStageShaderVariables": 28,
+  "maxColorAttachments": 8,
+  "maxColorAttachmentBytesPerSample": 128,
+  "maxComputeWorkgroupStorageSize": 32768,
+  "maxComputeInvocationsPerWorkgroup": 1024,
+  "maxComputeWorkgroupSizeX": 1024,
+  "maxComputeWorkgroupSizeY": 1024,
+  "maxComputeWorkgroupSizeZ": 64,
+  "maxComputeWorkgroupsPerDimension": 65535,
+  "maxImmediateSize": 64,
+  "maxStorageBuffersInFragmentStage": 16,
+  "maxStorageTexturesInFragmentStage": 8,
+  "maxStorageBuffersInVertexStage": 16,
+  "maxStorageTexturesInVertexStage": 8
+ },
+ "deviceFeatures": [
+  "core-features-and-limits",
+  "float32-blendable",
+  "float32-filterable",
+  "rg11b10ufloat-renderable",
+  "shader-f16",
+  "subgroups",
+  "texture-formats-tier1",
+  "texture-formats-tier2",
+  "timestamp-query"
+ ],
+ "probes": {
+  "r32float_rw": "ok",
+  "rgba16float_rw": "ok",
+  "rgba16float_readonly": "ok",
+  "r16float_write": "ok",
+  "rg11b10_write": "ok"
+ },
+ "done": true,
+ "headless": "new",
+ "flags": [
+  "--enable-unsafe-webgpu",
+  "--enable-webgpu-developer-features",
+  "--ignore-gpu-blocklist",
+  "--disable-background-timer-throttling",
+  "--disable-renderer-backgrounding",
+  "--disable-backgrounding-occluded-windows",
+  "--no-first-run",
+  "--no-default-browser-check"
+ ],
+ "seconds": 35.798,
+ "exposedBytes": 0
+}

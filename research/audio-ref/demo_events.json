@@ -1,0 +1,68 @@
+{
+ "sampleRate": 48000,
+ "fps": 60,
+ "events": [
+  {
+   "t": 0.25,
+   "type": "pop",
+   "size": 0.6,
+   "pan": 0.22,
+   "frame": 15
+  },
+  {
+   "t": 3.024875,
+   "type": "pop",
+   "size": 0.398,
+   "pan": 0.533,
+   "frame": 181
+  },
+  {
+   "t": 3.2,
+   "type": "pop",
+   "size": 1.25,
+   "pan": -0.1,
+   "frame": 192
+  },
+  {
+   "t": 5.7,
+   "type": "pop",
+   "size": 0.45,
+   "pan": 0.35,
+   "frame": 342
+  },
+  {
+   "t": 6.2134583333333335,
+   "type": "pop",
+   "size": 0.455,
+   "pan": -0.144,
+   "frame": 373
+  },
+  {
+   "t": 9.8,
+   "type": "gust",
+   "strength": 0.9,
+   "frame": 588
+  },
+  {
+   "t": 12.6,
+   "type": "logShift",
+   "size": 0.9,
+   "pan": 0.15,
+   "frame": 756
+  },
+  {
+   "t": 15.1,
+   "type": "pop",
+   "size": 0.8,
+   "pan": 0.3,
+   "frame": 906
+  },
+  {
+   "t": 18.3,
+   "type": "pop",
+   "size": 1,
+   "pan": -0.25,
+   "frame": 1098
+  }
+ ]
+}
